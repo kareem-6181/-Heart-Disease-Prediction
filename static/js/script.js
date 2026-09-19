@@ -275,7 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Select result",
 
             "form.fbsLow":
-                "Less than 120 mg/dl",
+                "Less than or equal to 120 mg/dl",
 
             "form.fbsHigh":
                 "Greater than 120 mg/dl",
@@ -612,7 +612,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "اختر النتيجة",
 
             "form.fbsLow":
-                "أقل من 120 mg/dl",
+                "أقل من أو يساوى 120 mg/dl",
 
             "form.fbsHigh":
                 "أكبر من 120 mg/dl",
