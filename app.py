@@ -1,11 +1,22 @@
 from flask import Flask, render_template, request, jsonify
 import pickle
+import os
 
 app = Flask(__name__)
 
-# Load the trained model and scaler
-model = pickle.load(open("heart_model.pkl", "rb"))
-scaler = pickle.load(open("scaler.pkl", "rb"))
+# Get the directory where app.py is located
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Model paths
+MODEL_PATH = os.path.join(BASE_DIR, "heart_model.pkl")
+SCALER_PATH = os.path.join(BASE_DIR, "scaler.pkl")
+
+# Load trained model and scaler
+with open(MODEL_PATH, "rb") as file:
+    model = pickle.load(file)
+
+with open(SCALER_PATH, "rb") as file:
+    scaler = pickle.load(file)
 
 
 @app.route("/")
@@ -18,8 +29,6 @@ def predict():
 
     data = request.get_json()
 
-    # Features must be in the exact same order
-    # used during model training
     features = [[
         float(data["age"]),
         float(data["sex"]),
@@ -36,7 +45,7 @@ def predict():
         float(data["thal"])
     ]]
 
-    # Apply the same StandardScaler used during training
+    # Apply the same scaler used during training
     features_scaled = scaler.transform(features)
 
     # Prediction
