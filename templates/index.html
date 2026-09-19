@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Heart Disease Prediction - Machine Learning powered heart disease prediction system">
+
+    <title>Heart Disease Prediction</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="#" class="logo">
+
+                <span class="logo-icon">♥</span>
+
+                <span>
+                    Heart Disease Prediction
+                </span>
+
+            </a>
+
+
+            <nav>
+
+                <a href="#about" data-i18n="nav.about">
+                    About
+                </a>
+
+                <a href="#performance" data-i18n="nav.performance">
+                    Performance
+                </a>
+
+                <a href="#prediction" data-i18n="nav.prediction">
+                    Prediction
+                </a>
+
+            </nav>
+
+
+            <div class="nav-actions">
+
+                <!-- Language Switcher -->
+
+                <div class="language-switcher">
+
+                    <button
+                        type="button"
+                        class="language-btn active"
+                        data-lang="en">
+                        EN
+                    </button>
+
+                    <span>|</span>
+
+                    <button
+                        type="button"
+                        class="language-btn"
+                        data-lang="ar">
+                        AR
+                    </button>
+
+                </div>
+
+
+                <a
+                    href="#prediction"
+                    class="nav-button"
+                    data-i18n="nav.start">
+                    Start Assessment
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="status-badge">
+
+                    <span class="status-dot"></span>
+
+                    <span data-i18n="hero.status">
+                        Machine Learning Powered
+                    </span>
+
+                </div>
+
+
+                <h1>
+
+                    <span class="hero-line" data-i18n="hero.title1">
+                        Heart Disease
+                    </span>
+
+                    <span data-i18n="hero.title2">
+                        Prediction
+                    </span>
+
+                    <span data-i18n="hero.title3">
+                        Reimagined.
+                    </span>
+
+                </h1>
+
+
+                <p data-i18n="hero.description">
+
+                    An intelligent machine learning system designed
+                    to analyze clinical indicators and estimate the
+                    likelihood of heart disease.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#prediction"
+                        class="primary-button">
+
+                        <span data-i18n="hero.start">
+                            Start Assessment
+                        </span>
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="#performance"
+                        class="secondary-button"
+                        data-i18n="hero.explore">
+
+                        Explore Model
+
+                    </a>
+
+                </div>
+
+
+                <!-- Statistics -->
+
+                <div class="hero-stats">
+
+                    <div>
+
+                        <strong>
+                            88.89%
+                        </strong>
+
+                        <span data-i18n="stats.accuracy">
+                            Accuracy
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            303
+                        </strong>
+
+                        <span data-i18n="stats.patients">
+                            Patients
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            13
+                        </strong>
+
+                        <span data-i18n="stats.features">
+                            Features
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Hero Visual -->
+
+            <div class="hero-visual">
+
+                <div class="orb"></div>
+
+
+                <div class="heart-card">
+
+                    <div class="card-top">
+
+                        <span data-i18n="hero.ai">
+                            AI ANALYSIS
+                        </span>
+
+                        <span class="live" data-i18n="hero.live">
+                            ● LIVE
+                        </span>
+
+                    </div>
+
+
+                    <div class="heart-icon">
+                        ♥
+                    </div>
+
+
+                    <div class="pulse-line">
+                        <span></span>
+                    </div>
+
+
+                    <h3 data-i18n="hero.assessment">
+                        Cardiovascular Assessment
+                    </h3>
+
+
+                    <p data-i18n="hero.powered">
+                        Powered by Logistic Regression
+                    </p>
+
+
+                    <div class="analysis-bar">
+
+                        <div></div>
+
+                    </div>
+
+
+                    <div class="analysis-info">
+
+                        <span data-i18n="hero.modelStatus">
+                            Model Status
+                        </span>
+
+                        <strong data-i18n="hero.ready">
+                            Ready
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ABOUT
+        ================================================== -->
+
+        <section
+            class="section"
+            id="about">
+
+            <div class="section-heading">
+
+                <span class="eyebrow" data-i18n="about.eyebrow">
+                    01 — ABOUT THE PROJECT
+                </span>
+
+
+                <h2>
+
+                    <span data-i18n="about.title1">
+                        Machine Learning
+                    </span>
+
+                    <span data-i18n="about.title2">
+                        Behind the Experience.
+                    </span>
+
+                </h2>
+
+
+                <p data-i18n="about.description">
+
+                    This Heart Disease Prediction system uses
+                    clinical and medical indicators to generate
+                    a machine learning based risk assessment.
+
+                </p>
+
+            </div>
+
+
+            <div class="info-grid">
+
+                <!-- Dataset -->
+
+                <div class="info-card">
+
+                    <span class="card-number">
+                        01
+                    </span>
+
+                    <h3 data-i18n="about.dataset.title">
+                        Dataset
+                    </h3>
+
+                    <p data-i18n="about.dataset.text">
+
+                        UCI Heart Disease Dataset containing
+                        303 patient records.
+
+                    </p>
+
+                </div>
+
+
+                <!-- Features -->
+
+                <div class="info-card">
+
+                    <span class="card-number">
+                        02
+                    </span>
+
+                    <h3 data-i18n="about.features.title">
+                        Features
+                    </h3>
+
+                    <p data-i18n="about.features.text">
+
+                        13 clinical and cardiovascular indicators
+                        are used as model inputs.
+
+                    </p>
+
+                </div>
+
+
+                <!-- Algorithm -->
+
+                <div class="info-card">
+
+                    <span class="card-number">
+                        03
+                    </span>
+
+                    <h3 data-i18n="about.algorithm.title">
+                        Algorithm
+                    </h3>
+
+                    <p data-i18n="about.algorithm.text">
+
+                        Logistic Regression was evaluated alongside
+                        Random Forest during model development.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PERFORMANCE
+        ================================================== -->
+
+        <section
+            class="section performance-section"
+            id="performance">
+
+            <div class="section-heading">
+
+                <span class="eyebrow" data-i18n="performance.eyebrow">
+                    02 — MODEL PERFORMANCE
+                </span>
+
+
+                <h2>
+
+                    <span data-i18n="performance.title1">
+                        Built on
+                    </span>
+
+                    <span data-i18n="performance.title2">
+                        Real Evaluation.
+                    </span>
+
+                </h2>
+
+            </div>
+
+
+            <div class="metrics-grid">
+
+                <!-- Accuracy -->
+
+                <div class="metric-card">
+
+                    <span data-i18n="metrics.accuracy">
+                        Accuracy
+                    </span>
+
+                    <strong>
+                        88.89%
+                    </strong>
+
+                    <small data-i18n="metrics.test">
+                        Test Set
+                    </small>
+
+                </div>
+
+
+                <!-- Precision -->
+
+                <div class="metric-card">
+
+                    <span data-i18n="metrics.precision">
+                        Precision
+                    </span>
+
+                    <strong>
+                        89%
+                    </strong>
+
+                    <small data-i18n="metrics.weighted">
+                        Weighted Average
+                    </small>
+
+                </div>
+
+
+                <!-- Recall -->
+
+                <div class="metric-card">
+
+                    <span data-i18n="metrics.recall">
+                        Recall
+                    </span>
+
+                    <strong>
+                        89%
+                    </strong>
+
+                    <small data-i18n="metrics.weighted">
+                        Weighted Average
+                    </small>
+
+                </div>
+
+
+                <!-- F1 -->
+
+                <div class="metric-card">
+
+                    <span data-i18n="metrics.f1">
+                        F1 Score
+                    </span>
+
+                    <strong>
+                        89%
+                    </strong>
+
+                    <small data-i18n="metrics.weighted">
+                        Weighted Average
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- Selected Model -->
+
+            <div class="model-card">
+
+                <div>
+
+                    <span class="eyebrow" data-i18n="model.selected">
+                        SELECTED MODEL
+                    </span>
+
+
+                    <h3>
+                        Logistic Regression
+                    </h3>
+
+
+                    <p data-i18n="model.description">
+
+                        Evaluated against Random Forest during
+                        model development.
+
+                    </p>
+
+                </div>
+
+
+                <div class="model-score">
+
+                    <span data-i18n="metrics.accuracy">
+                        Accuracy
+                    </span>
+
+                    <strong>
+                        88.89%
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PREDICTION
+        ================================================== -->
+
+        <section
+            class="section prediction-section"
+            id="prediction">
+
+            <div class="section-heading">
+
+                <span class="eyebrow" data-i18n="prediction.eyebrow">
+                    03 — LIVE PREDICTION
+                </span>
+
+
+                <h2>
+
+                    <span data-i18n="prediction.title1">
+                        Analyze Clinical
+                    </span>
+
+                    <span data-i18n="prediction.title2">
+                        Indicators.
+                    </span>
+
+                </h2>
+
+
+                <p data-i18n="prediction.description">
+
+                    Enter the patient's clinical information below
+                    to generate a machine learning prediction.
+
+                </p>
+
+            </div>
+
+
+            <div class="prediction-container">
+
+
+                <!-- =================================================
+                     FORM
+                ================================================== -->
+
+                <form id="predictionForm">
+
+
+                    <!-- Patient Information -->
+
+                    <div class="form-group">
+
+                        <div class="group-title">
+
+                            <span>
+                                01
+                            </span>
+
+                            <div>
+
+                                <h3 data-i18n="form.patient.title">
+                                    Patient Information
+                                </h3>
+
+                                <p data-i18n="form.patient.subtitle">
+                                    Basic patient characteristics
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="input-grid">
+
+
+                            <!-- Age -->
+
+                            <div class="input-box">
+
+                                <label for="age" data-i18n="form.age">
+                                    Age
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="age"
+                                    placeholder="e.g. 52"
+                                    min="1"
+                                    max="120"
+                                    required>
+
+                            </div>
+
+
+                            <!-- Sex -->
+
+                            <div class="input-box">
+
+                                <label for="sex" data-i18n="form.sex">
+                                    Sex
+                                </label>
+
+                                <select
+                                    id="sex"
+                                    required>
+
+                                    <option value="" data-i18n="form.selectSex">
+                                        Select sex
+                                    </option>
+
+                                    <option value="1" data-i18n="form.male">
+                                        Male
+                                    </option>
+
+                                    <option value="0" data-i18n="form.female">
+                                        Female
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Symptoms & Exercise -->
+
+                    <div class="form-group">
+
+                        <div class="group-title">
+
+                            <span>
+                                02
+                            </span>
+
+                            <div>
+
+                                <h3 data-i18n="form.symptoms.title">
+                                    Symptoms & Exercise
+                                </h3>
+
+                                <p data-i18n="form.symptoms.subtitle">
+                                    Chest pain and exercise response
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="input-grid">
+
+
+                            <!-- Chest Pain -->
+
+                            <div class="input-box">
+
+                                <label for="cp" data-i18n="form.chestPain">
+                                    Chest Pain Type
+                                </label>
+
+                                <select
+                                    id="cp"
+                                    required>
+
+                                    <option value="" data-i18n="form.selectChest">
+                                        Select chest pain type
+                                    </option>
+
+                                    <option value="0" data-i18n="form.typical">
+                                        Typical Angina
+                                    </option>
+
+                                    <option value="1" data-i18n="form.atypical">
+                                        Atypical Angina
+                                    </option>
+
+                                    <option value="2" data-i18n="form.nonAnginal">
+                                        Non-Anginal Pain
+                                    </option>
+
+                                    <option value="3" data-i18n="form.asymptomatic">
+                                        Asymptomatic
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Exercise Induced Angina -->
+
+                            <div class="input-box">
+
+                                <label for="exang" data-i18n="form.exang">
+                                    Exercise-Induced Angina
+                                </label>
+
+                                <select
+                                    id="exang"
+                                    required>
+
+                                    <option value="" data-i18n="form.selectOption">
+                                        Select option
+                                    </option>
+
+                                    <option value="0" data-i18n="form.no">
+                                        No
+                                    </option>
+
+                                    <option value="1" data-i18n="form.yes">
+                                        Yes
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Clinical Measurements -->
+
+                    <div class="form-group">
+
+                        <div class="group-title">
+
+                            <span>
+                                03
+                            </span>
+
+                            <div>
+
+                                <h3 data-i18n="form.clinical.title">
+                                    Clinical Measurements
+                                </h3>
+
+                                <p data-i18n="form.clinical.subtitle">
+                                    Blood pressure, cholesterol and heart rate
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="input-grid three-columns">
+
+
+                            <!-- Resting Blood Pressure -->
+
+                            <div class="input-box">
+
+                                <label for="trestbps" data-i18n="form.trestbps">
+                                    Resting Blood Pressure
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="trestbps"
+                                    placeholder="mm Hg"
+                                    min="50"
+                                    max="250"
+                                    required>
+
+                            </div>
+
+
+                            <!-- Serum Cholesterol -->
+
+                            <div class="input-box">
+
+                                <label for="chol" data-i18n="form.chol">
+                                    Serum Cholesterol
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="chol"
+                                    placeholder="mg/dl"
+                                    min="50"
+                                    max="700"
+                                    required>
+
+                            </div>
+
+
+                            <!-- Maximum Heart Rate -->
+
+                            <div class="input-box">
+
+                                <label for="thalach" data-i18n="form.thalach">
+                                    Maximum Heart Rate Achieved
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="thalach"
+                                    placeholder="e.g. 150"
+                                    min="50"
+                                    max="250"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Medical Tests -->
+
+                    <div class="form-group">
+
+                        <div class="group-title">
+
+                            <span>
+                                04
+                            </span>
+
+                            <div>
+
+                                <h3 data-i18n="form.tests.title">
+                                    Medical Tests
+                                </h3>
+
+                                <p data-i18n="form.tests.subtitle">
+                                    Laboratory and cardiovascular test results
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="input-grid">
+
+
+                            <!-- Fasting Blood Sugar -->
+
+                            <div class="input-box">
+
+                                <label for="fbs" data-i18n="form.fbs">
+                                    Fasting Blood Sugar
+                                </label>
+
+                                <select
+                                    id="fbs"
+                                    required>
+
+                                    <option value="" data-i18n="form.selectResult">
+                                        Select result
+                                    </option>
+
+                                    <option value="0" data-i18n="form.fbsLow">
+                                        Less than 120 mg/dl
+                                    </option>
+
+                                    <option value="1" data-i18n="form.fbsHigh">
+                                        Greater than 120 mg/dl
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Resting Electrocardiographic Results -->
+
+                            <div class="input-box">
+
+                                <label for="restecg" data-i18n="form.restecg">
+                                    Resting Electrocardiographic Results
+                                </label>
+
+                                <select
+                                    id="restecg"
+                                    required>
+
+                                    <option value="" data-i18n="form.selectResult">
+                                        Select result
+                                    </option>
+
+                                    <option value="0" data-i18n="form.normal">
+                                        Normal
+                                    </option>
+
+                                    <option value="1" data-i18n="form.st">
+                                        ST-T Wave Abnormality
+                                    </option>
+
+                                    <option value="2" data-i18n="form.lvh">
+                                        Left Ventricular Hypertrophy
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- ST Depression -->
+
+                            <div class="input-box">
+
+                                <label for="oldpeak" data-i18n="form.oldpeak">
+                                    ST Depression
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="oldpeak"
+                                    step="0.1"
+                                    min="0"
+                                    max="10"
+                                    placeholder="e.g. 1.2"
+                                    required>
+
+                            </div>
+
+
+                            <!-- ST Segment Slope -->
+
+                            <div class="input-box">
+
+                                <label for="slope" data-i18n="form.slope">
+                                    ST Segment Slope
+                                </label>
+
+                                <select
+                                    id="slope"
+                                    required>
+
+                                    <option value="" data-i18n="form.selectSlope">
+                                        Select slope
+                                    </option>
+
+                                    <option value="0" data-i18n="form.upsloping">
+                                        Upsloping
+                                    </option>
+
+                                    <option value="1" data-i18n="form.flat">
+                                        Flat
+                                    </option>
+
+                                    <option value="2" data-i18n="form.downsloping">
+                                        Downsloping
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Number of Major Vessels -->
+
+                            <div class="input-box">
+
+                                <label for="ca" data-i18n="form.ca">
+                                    Number of Major Vessels
+                                </label>
+
+                                <select
+                                    id="ca"
+                                    required>
+
+                                    <option value="" data-i18n="form.selectNumber">
+                                        Select number
+                                    </option>
+
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Thallium Test -->
+
+                            <div class="input-box">
+
+                                <label for="thal" data-i18n="form.thal">
+                                    Thallium Test Result
+                                </label>
+
+                                <select
+                                    id="thal"
+                                    required>
+
+                                    <option value="" data-i18n="form.selectResult">
+                                        Select result
+                                    </option>
+
+                                    <option value="1" data-i18n="form.thalNormal">
+                                        Normal
+                                    </option>
+
+                                    <option value="2" data-i18n="form.fixed">
+                                        Fixed Defect
+                                    </option>
+
+                                    <option value="3" data-i18n="form.reversible">
+                                        Reversible Defect
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Submit -->
+
+                    <button
+                        type="submit"
+                        class="predict-button">
+
+                        <span data-i18n="form.analyze">
+                            Analyze Patient
+                        </span>
+
+                        <span class="button-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+                </form>
+
+
+                <!-- =================================================
+                     RESULT
+                ================================================== -->
+
+                <div
+                    id="result"
+                    class="result-card hidden">
+
+                    <div class="result-icon">
+                        ♥
+                    </div>
+
+                    <span
+                        class="eyebrow"
+                        data-i18n="result.complete">
+                        ANALYSIS COMPLETE
+                    </span>
+
+                    <h3 id="resultTitle">
+                        Prediction Result
+                    </h3>
+
+                    <div class="probability">
+
+                        <strong id="probabilityValue">
+                            0%
+                        </strong>
+
+                        <span data-i18n="result.probability">
+                            Predicted Probability
+                        </span>
+
+                    </div>
+
+                    <p id="resultMessage"></p>
+
+                    <div
+                        class="medical-note"
+                        data-i18n="result.note">
+
+                        This machine learning prediction is for
+                        educational and informational purposes only
+                        and should not be considered a medical diagnosis.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FOOTER
+        ====================================================== -->
+
+        <footer>
+
+            <div class="footer-logo">
+
+                <span>
+                    ♥
+                </span>
+
+                <span data-i18n="footer.title">
+                    Heart Disease Prediction
+                </span>
+
+            </div>
+
+            <p data-i18n="footer.description">
+                Machine Learning • Healthcare • Artificial Intelligence
+            </p>
+
+            <p class="copyright">
+                Built by Kareem Reda
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JavaScript -->
+
+    <script
+        src="{{ url_for('static', filename='js/script.js') }}">
+    </script>
+
+</body>
+
+</html>
