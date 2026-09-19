@@ -1,4 +1,3 @@
-# -Heart-Disease-Prediction
 # ❤️ Heart Disease Prediction
 
 A Machine Learning web application that predicts the likelihood of heart disease based on patient medical information.
@@ -162,4 +161,30 @@ The application takes the patient's medical information as input and sends it to
 
 The model then returns:
 
-* Prediction re
+* Prediction result
+* Probability of the predicted class
+
+The probability is generated using:
+
+```python
+model.predict_proba()
+```
+
+## ⚠️ Disclaimer
+
+This project is created for **educational and demonstration purposes only**.
+
+The prediction should **not** be considered a medical diagnosis or used as a substitute for professional medical advice.
+
+## 👨‍💻 Author
+
+**Kareem Reda**
+
+AI & Machine Learning Engineer
+Web Developer | Graphic Designer
+
+🔗 GitHub: [kareem-6181](https://github.com/kareem-6181)
+
+---
+
+⭐ If you find this project useful, feel free to star the repository.
